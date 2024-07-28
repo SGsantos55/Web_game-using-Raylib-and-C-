@@ -7,7 +7,7 @@ If you're interested in learning how to create your own snake game with raylib, 
 # Let's Play
 ..
 
-https://game.plan.com.nl
+https://game.plan.com.np
 
 
 
