@@ -20,10 +20,6 @@ arrows.forEach((arrow, i) => {
   console.log(Math.floor(window.innerWidth / 270));
 });
 
-// Open Game
-    function openGame() {
-        window.location.href = '/snake.html';
-    }
 //TOGGLE
 
 const ball = document.querySelector(".toggle-ball");
