@@ -12,19 +12,23 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" defer></script>
-    <meta name="description" content="Explore and play a collection of classic games like Snake and Space Shooter on our web-based platform. Developed with C++ and Raylib, our games offer an engaging experience. Visit games.plan.com.np to play now!">
-    <meta name="keywords" content="classic games, Snake game, Space Shooter, web-based games, C++ games, Raylib, play games online, game platform, games.plan.com.np">
+    <meta name="description"
+        content="Explore and play a collection of classic games like Snake and Space Shooter on our web-based platform. Developed with C++ and Raylib, our games offer an engaging experience. Visit games.plan.com.np to play now!">
+    <meta name="keywords"
+        content="classic games, Snake game, Space Shooter, web-based games, C++ games, Raylib, play games online, game platform, games.plan.com.np">
     <meta name="author" content="Plan Ghimire and Team">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Classic Web-Based Games Platform">
-    <meta property="og:description" content="Play classic games like Snake and Space Shooter on our web-based platform. Developed with C++ and Raylib, offering a smooth and engaging gaming experience.">
+    <meta property="og:description"
+        content="Play classic games like Snake and Space Shooter on our web-based platform. Developed with C++ and Raylib, offering a smooth and engaging gaming experience.">
     <meta property="og:url" content="https://games.plan.com.np">
     <meta property="og:image" content="https://games.plan.com.np/preview.png">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Games Plan">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Classic Web-Based Games Platform">
-    <meta name="twitter:description" content="Play classic games like Snake and Space Shooter on our web-based platform. Developed with C++ and Raylib, offering a smooth and engaging gaming experience.">
+    <meta name="twitter:description"
+        content="Play classic games like Snake and Space Shooter on our web-based platform. Developed with C++ and Raylib, offering a smooth and engaging gaming experience.">
     <meta name="twitter:image" content="https://games.plan.com.np/preview.png">
     <link rel="canonical" href="https://games.plan.com.np">
     <title>Game • Plan Ghimire</title>
@@ -32,7 +36,7 @@
 
 <body>
     <div id="myWindow">
-        
+
     </div>
     <div class="navbar">
         <div class="navbar-container">
@@ -41,10 +45,10 @@
             </div>
             <div class="menu-container">
                 <ul class="menu-list">
-                    <li class="menu-list-item active">Home</li>
-                    <li class="menu-list-item">Games</li>
-                    <li class="menu-list-item">About</li>
-                    <li class="menu-list-item">Contact</li>
+                    <li class="menu-list-item active"><a href="#">Home</a></li>
+                    <li class="menu-list-item"><a href="#releases">Games</a></li>
+                    <li class="menu-list-item"> <a href="#about">About</a></li>
+                    <li class="menu-list-item"><a href="#contacts"> Contact</a></li>
                 </ul>
             </div>
             <div class="profile-container">
@@ -63,10 +67,11 @@
     </div>
     <div class="sidebar">
         <i class="left-menu-icon fas fa-search"></i>
-        <i class="left-menu-icon fas fa-home"></i>
-        <i class="left-menu-icon fas fa-users"></i>
+        <i class="left-menu-icon fas fa-home" onclick="scrollToHome()"></i>
+        <i class="left-menu-icon fas fa-info-circle" onclick="scrollToAbout()"></i>
+        <i class="left-menu-icon fas fa-users" onclick="scrollToContacts()"></i>
     </div>
-    <div class="container">
+    <div class="container" id="home">
         <div class="content-container">
             <div class="featured-content"
                 style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('img/c4.png');">
@@ -75,10 +80,10 @@
                     C++ and the Raylib library. Whether you're a seasoned gamer or a newcomer, we promise to
                     provide hours of entertainment.</p>
                 <a href="./snake/index.html">
-                <button class="featured-button">Play Now</button></a>
+                    <button class="featured-button">Play Now</button></a>
                 <button class="featured-button2">Download Now</button></a>
             </div>
-            <div class="movie-list-container">
+            <div class="movie-list-container" id="releases">
                 <h1 class="movie-list-title">NEW RELEASES</h1>
                 <div class="movie-list-wrapper">
                     <div class="movie-list">
@@ -88,7 +93,7 @@
                             <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
                                 hic fugit similique accusantium.</p>
                             <a href="./snake/index.html">
-                            <button class="movie-list-item-button">Play</button></a>
+                                <button class="movie-list-item-button">Play</button></a>
                             <button class="movie-list-item-button2">Download</button>
                         </div>
                         <div class="movie-list-item">
@@ -97,14 +102,14 @@
                             <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
                                 hic fugit similique accusantium.</p>
                             <a href="https://games.plan.com.np/snake.html">
-                            <button class="movie-list-item-button">Play</button></a>
+                                <button class="movie-list-item-button">Play</button></a>
                             <button class="movie-list-item-button2">Download</button>
                         </div>
                         <i class="fas fa-chevron-right arrow"></i>
                     </div>
                 </div>
 
-                <div class="featured-content"
+                <div class="featured-content" id="about"
                     style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('img/f-2.jpg');">
                     <img class="featured-title" src="img/f-t-2.png" alt="">
                     <p class="featured-desc">PlanGames is designed to deliver a dynamic and engaging gaming experience
@@ -112,7 +117,7 @@
                         are both challenging and fun, featuring beautifully crafted visuals and intuitive controls.</p>
                     <button class="featured-button">View More</button>
                 </div>
-                <div class="movie-list-container">
+                <div class="movie-list-container" id="contacts">
                     <h1 class="movie-list-title">Our Contributors</h1>
                     <div class="movie-list-wrapper">
                         <div class="movie-list">
@@ -132,7 +137,7 @@
                                     At
                                     hic fugit similique accusantium.</p>
                                 <button class="movie-list-item-button"
-                                    onclick="location.href='mailto:080bei033@tcioe.edu.np?subject=Write%20your%20subject...%20why%20you%20want%20to%20contact%20me ?&body=Your%20description%20here'">Contact
+                                    onclick="location.href='mailto:pranjal.080bei033@tcioe.edu.np?subject=Write%20your%20subject...%20why%20you%20want%20to%20contact%20me ?&body=Your%20description%20here'">Contact
                                 </button>
                             </div>
 
@@ -143,7 +148,7 @@
                                     At
                                     hic fugit similique accusantium.</p>
                                 <button class="movie-list-item-button"
-                                    onclick="location.href='mailto:080bei042@tcioe.edu.np?subject=Write%20your%20subject...%20why%20you%20want%20to%20contact%20me ?&body=Your%20description%20here'">Contact
+                                    onclick="location.href='mailto:santosh.080bei042@tcioe.edu.np?subject=Write%20your%20subject...%20why%20you%20want%20to%20contact%20me ?&body=Your%20description%20here'">Contact
                                 </button>
                             </div>
 
@@ -155,8 +160,38 @@
                 </div>
             </div>
         </div>
-
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h2>About Us</h2>
+                    <p>With our platform, you can explore a variety of adventure games that are both
+                        challenging and fun, featuring beautifully crafted visuals and intuitive controls.</p>
+                </div>
+                <div class="footer-section links">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#releases">Games</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h2>Contact Us</h2>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Thapathali Campus, Kathmandu, Nepal</li>
+                        <li><i class="fas fa-phone"></i> +977 9843391507</li>
+                        <li><i class="fas fa-envelope"></i> contact@games.plan.com.np</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 PlanGames | Designed by Plan Ghimire
+            </div>
+        </footer>
     </div>
+
     <script src="./app.js"></script>
 </body>
 

@@ -49,6 +49,18 @@ body {
 .menu-list-item.active {
   font-weight: bold;
 }
+.menu-list-item a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu-list-item.active a {
+  font-weight: bold;
+}
+
+.menu-list-item a:hover {
+  color: lightgray; /* Optional: Add a hover effect if desired */
+}
 .profile-container {
   flex: 2;
   display: flex;
@@ -330,4 +342,90 @@ body {
     .menu-container{
         display: none;
     }
+}
+
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 20px;
+  margin-left: 50px;
+}
+
+.footer-section h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #fff;
+  position: relative;
+}
+
+.footer-section h2::after {
+  content: '';
+  width: 50px;
+  height: 2px;
+  background-color: #f39c12;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+}
+
+.footer-section p, .footer-section ul {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.footer-section ul {
+  list-style-type: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #f39c12;
+}
+
+.footer-section ul li i {
+  margin-right: 10px;
+  color: #f39c12;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #222;
+  color: #ccc;
+  font-size: 14px;
+  border-top: 1px solid #444;
+}
+
+.footer-bottom a {
+  color: #f39c12;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  color: #fff;
 }

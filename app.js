@@ -1,3 +1,17 @@
+// Toggle
+const ball = document.querySelector(".toggle-ball");
+const items = document.querySelectorAll(
+  ".container, .movie-list-title, .navbar-container, .sidebar, .left-menu-icon, .toggle, body, .profile-container"
+);
+
+ball.addEventListener("click", () => {
+  items.forEach((item) => {
+    item.classList.toggle("active");
+  });
+  ball.classList.toggle("active");
+});
+
+
 const arrows = document.querySelectorAll(".arrow");
 const movieLists = document.querySelectorAll(".movie-list");
 
@@ -20,16 +34,13 @@ arrows.forEach((arrow, i) => {
   console.log(Math.floor(window.innerWidth / 270));
 });
 
-// Toggle
-const ball = document.querySelector(".toggle-ball");
-const items = document.querySelectorAll(
-  ".container, .movie-list-title, .navbar-container, .sidebar, .left-menu-icon, .toggle, body, .profile-container"
-);
+function scrollToContacts() {
+  document.querySelector('#contacts').scrollIntoView({ behavior: 'smooth' });
+}
+function scrollToHome() {
+  document.querySelector('#home').scrollIntoView({ behavior: 'smooth' });
+}
 
-ball.addEventListener("click", () => {
-  items.forEach((item) => {
-    item.classList.toggle("active");
-  });
-  ball.classList.toggle("active");
-});
-
+function scrollToAbout() {
+  document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+}
