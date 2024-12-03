@@ -2,6 +2,9 @@
 #include <raylib.h>
 #include <deque>
 #include <raymath.h>
+#define PEACH {90,30,41,100}
+#define PEACH2 {250,90,41,100}
+#define BG (Color){199,255,87,100}
 
 using namespace std;
 
@@ -9,8 +12,8 @@ static bool allowMove = false;
 Color green = {173, 204, 96, 255};
 Color darkGreen = {43, 51, 24, 255};
 
-int cellSize = 30;
-int cellCount = 25;
+int cellSize = 28;
+int cellCount = 22;
 int offset = 75;
 
 double lastUpdateTime = 0;
@@ -52,7 +55,12 @@ public:
             float x = body[i].x;
             float y = body[i].y;
             Rectangle segment = Rectangle{offset + x * cellSize, offset + y * cellSize, (float)cellSize, (float)cellSize};
-            DrawRectangleRounded(segment, 0.5, 6, darkGreen);
+            if(i%2==0){
+                DrawRectangleRounded(segment, 0.5, 6, PEACH);
+            }else{
+                DrawRectangleRounded(segment, 0.5, 6, PEACH2);
+
+            }
         }
     }
 
@@ -211,6 +219,7 @@ public:
 
 int main()
 {
+    SetConfigFlags(FLAG_WINDOW_RESIZABLE);
     cout << "Starting the game..." << endl;
     InitWindow(2 * offset + cellSize * cellCount, 2 * offset + cellSize * cellCount, "Retro Snake");
     SetTargetFPS(60);
@@ -227,25 +236,25 @@ int main()
             game.Update();
         }
 
-        if (IsKeyPressed(KEY_UP) && game.snake.direction.y != 1 && allowMove)
+        if ((IsKeyPressed(KEY_UP) || IsKeyPressed(KEY_W)) && game.snake.direction.y != 1 && allowMove)
         {
             game.snake.direction = {0, -1};
             game.running = true;
             allowMove = false;
         }
-        if (IsKeyPressed(KEY_DOWN) && game.snake.direction.y != -1 && allowMove)
+        if ((IsKeyPressed(KEY_DOWN) || IsKeyPressed(KEY_S)) && game.snake.direction.y != -1 && allowMove)
         {
             game.snake.direction = {0, 1};
             game.running = true;
             allowMove = false;
         }
-        if (IsKeyPressed(KEY_LEFT) && game.snake.direction.x != 1 && allowMove)
+        if ((IsKeyPressed(KEY_LEFT) || IsKeyPressed(KEY_A)) && game.snake.direction.x != 1 && allowMove)
         {
             game.snake.direction = {-1, 0};
             game.running = true;
             allowMove = false;
         }
-        if (IsKeyPressed(KEY_RIGHT) && game.snake.direction.x != -1 && allowMove)
+        if ((IsKeyPressed(KEY_RIGHT) || IsKeyPressed(KEY_D)) && game.snake.direction.x != -1 && allowMove)
         {
             game.snake.direction = {1, 0};
             game.running = true;
@@ -253,7 +262,8 @@ int main()
         }
 
         // Drawing
-        ClearBackground(green);
+        Color c({60,69,49,50});
+        ClearBackground(BEIGE);
         DrawRectangleLinesEx(Rectangle{(float)offset - 5, (float)offset - 5, (float)cellSize * cellCount + 10, (float)cellSize * cellCount + 10}, 5, darkGreen);
         DrawText("Retro Snake", offset - 5, 20, 40, darkGreen);
         DrawText(TextFormat("%i", game.score), offset - 5, offset + cellSize * cellCount + 10, 40, darkGreen);
